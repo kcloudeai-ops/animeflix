@@ -347,7 +347,7 @@ export function toAnimeRow(a: JikanAnime): AnimeInsert {
     studios: a.studios.map((s) => s.name),
 
     // SEO varsayılanları — admin panelinden ezilebilir.
-    // Site adı eklenmez: layout'taki `title.template` zaten "%s | AnimeFlix"
+    // Site adı eklenmez: layout'taki `title.template` zaten "%s | Anime Köşesi"
     // uyguluyor, burada da eklersek başlık iki kez soneklenir.
     meta_title: `${displayTitle} Türkçe Altyazılı İzle`,
     meta_description:

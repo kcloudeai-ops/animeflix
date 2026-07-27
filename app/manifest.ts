@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "AnimeFlix — Türkçe Altyazılı Anime İzle",
-    short_name: "AnimeFlix",
+    name: "Anime Köşesi — Türkçe Altyazılı Anime İzle",
+    short_name: "Anime Köşesi",
     description:
       "Binlerce anime serisi ve filmi HD kalitede, Türkçe altyazılı izleyin.",
     start_url: "/",

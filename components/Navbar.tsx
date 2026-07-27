@@ -41,7 +41,7 @@ export function Navbar() {
 
         <Link href="/" className="shrink-0">
           <span className="text-2xl font-extrabold tracking-tight text-brand">
-            ANIME<span className="text-white">FLIX</span>
+Anime<span className="text-white"> Köşesi</span>
           </span>
         </Link>
 

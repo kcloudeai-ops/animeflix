@@ -1,4 +1,4 @@
-# AnimeFlix
+# Anime Köşesi
 
 Next.js 15 (App Router) + TypeScript + Supabase + Tailwind v4 + Framer Motion ile
 kurulmuş, Jikan API'den beslenen anime akış platformu.

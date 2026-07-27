@@ -15,7 +15,7 @@ sitemap'in 2.639 URL'i localhost gösterir — Google siteyi indeksleyemez.
 
 **Yerelde test için** `.env.local`:
 ```
-NEXT_PUBLIC_SITE_URL=https://alanadiniz.com
+NEXT_PUBLIC_SITE_URL=https://animekosesi.com
 ```
 
 **Yayında** (Vercel / Netlify / sunucu) barındırma panelinde ortam
@@ -36,7 +36,7 @@ Google'ın 2.639 sayfayı bulup indekslemesi için.
 ### Adım adım
 
 1. [search.google.com/search-console](https://search.google.com/search-console)
-   → **Mülk ekle** → **URL öneki** → `https://alanadiniz.com`
+   → **Mülk ekle** → **URL öneki** → `https://animekosesi.com`
 
 2. Doğrulama yöntemi: **"HTML etiketi"** seçin. Google şöyle bir kod verir:
    ```html
@@ -68,8 +68,8 @@ trafiği azımsanmayacak düzeyde.
 
 Yayına aldıktan sonra tarayıcıda kontrol edin:
 
-- [ ] `alanadiniz.com/sitemap.xml` açılıyor ve URL'ler gerçek alan adını gösteriyor
-- [ ] `alanadiniz.com/robots.txt` sitemap satırında gerçek alan adı var
+- [ ] `animekosesi.com/sitemap.xml` açılıyor ve URL'ler gerçek alan adını gösteriyor
+- [ ] `animekosesi.com/robots.txt` sitemap satırında gerçek alan adı var
 - [ ] Bir anime sayfasında sağ tık → kaynağı görüntüle → `rel="canonical"` gerçek alan adı
 - [ ] [Rich Results Test](https://search.google.com/test/rich-results)
       ile bir anime sayfasını tarayın — TVSeries + Breadcrumb görünmeli

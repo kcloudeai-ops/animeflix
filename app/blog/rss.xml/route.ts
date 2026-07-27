@@ -25,7 +25,7 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>AnimeFlix Blog</title>
+    <title>Anime Köşesi Blog</title>
     <link>${SITE_URL}/blog</link>
     <description>Anime dünyasından haberler, öneriler ve incelemeler.</description>
     <language>tr-TR</language>

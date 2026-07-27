@@ -161,7 +161,7 @@ export function SiteJsonLd() {
         data={{
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "AnimeFlix",
+          name: "Anime Köşesi",
           url: SITE_URL,
           inLanguage: "tr-TR",
           potentialAction: {
@@ -178,7 +178,7 @@ export function SiteJsonLd() {
         data={{
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "AnimeFlix",
+          name: "Anime Köşesi",
           url: SITE_URL,
           logo: `${SITE_URL}/icon`,
         }}
@@ -276,10 +276,10 @@ export function ArticleJsonLd({
         dateModified: updatedAt,
         inLanguage: "tr-TR",
         mainEntityOfPage: `${SITE_URL}/blog/${slug}`,
-        author: { "@type": "Organization", name: "AnimeFlix" },
+        author: { "@type": "Organization", name: "Anime Köşesi" },
         publisher: {
           "@type": "Organization",
-          name: "AnimeFlix",
+          name: "Anime Köşesi",
           logo: { "@type": "ImageObject", url: `${SITE_URL}/icon` },
         },
       }}

@@ -10,8 +10,8 @@ import { PageTracker } from "@/components/PageTracker";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "AnimeFlix — Türkçe Altyazılı Anime İzle",
-    template: "%s | AnimeFlix",
+    default: "Anime Köşesi — Türkçe Altyazılı Anime İzle",
+    template: "%s | Anime Köşesi",
   },
   description:
     "Binlerce anime serisi ve filmi HD kalitede, Türkçe altyazılı ve reklamsız. Yeni bölümler her hafta.",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    siteName: "AnimeFlix",
+    siteName: "Anime Köşesi",
     url: SITE_URL,
   },
   twitter: { card: "summary_large_image" },
@@ -69,7 +69,7 @@ export default function RootLayout({
           <BottomNav />
           <footer className="border-t border-ink-line mt-24 py-10 text-center text-sm text-zinc-500">
             <p>
-              © {new Date().getFullYear()} AnimeFlix — Anime verileri{" "}
+              © {new Date().getFullYear()} Anime Köşesi — Anime verileri{" "}
               <a
                 href="https://jikan.moe"
                 className="underline hover:text-zinc-300"

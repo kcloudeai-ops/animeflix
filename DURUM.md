@@ -1,11 +1,12 @@
-# AnimeFlix — Proje Durumu (Devir Belgesi)
+# Anime Köşesi — Proje Durumu (Devir Belgesi)
 
 > Bu dosya, yeni bir oturumun (ya da başka birinin) projeyi baştan
 > anlaması için tutulur. Sohbet geçmişi olmadan da buradan devam edilebilir.
 
 ## Genel
 
-- **Proje**: AnimeFlix — Türkçe anime katalog/izleme platformu
+- **Proje**: **Anime Köşesi** — Türkçe anime katalog/izleme platformu
+  (marka adı "Anime Köşesi", alan adı **animekosesi.com**; eski ad Anime Köşesi'ti)
 - **Yığın**: Next.js 15 (App Router) + TypeScript + Supabase (Postgres+Auth) +
   Tailwind v4 + Framer Motion + TanStack Query
 - **Konum**: `C:\Users\nuref\Desktop\cloudev1`

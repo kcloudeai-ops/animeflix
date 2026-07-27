@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 // Anasayfa ve OG görseli olmayan sayfalar sosyal medyada
 // paylaşıldığında görünen varsayılan kart görseli (1200×630).
-export const alt = "AnimeFlix — Türkçe Altyazılı Anime İzle";
+export const alt = "Anime Köşesi — Türkçe Altyazılı Anime İzle";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,8 +22,8 @@ export default function OgImage() {
         }}
       >
         <div style={{ display: "flex", fontSize: 92, fontWeight: 800 }}>
-          <span style={{ color: "#e50914" }}>ANIME</span>
-          <span>FLIX</span>
+          <span style={{ color: "#e50914" }}>Anime</span>
+          <span>&nbsp;Köşesi</span>
         </div>
         <div
           style={{

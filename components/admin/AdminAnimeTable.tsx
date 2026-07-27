@@ -277,7 +277,7 @@ function SeoDrawer({
               Google Önizleme
             </p>
             <p className="text-xs text-emerald-500">
-              animeflix.com › anime › {anime.slug}
+              animekosesi.com › anime › {anime.slug}
             </p>
             <p className="mt-0.5 truncate text-[15px] text-blue-400">
               {title || `${anime.title} Türkçe Altyazılı İzle`}

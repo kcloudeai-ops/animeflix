@@ -91,7 +91,7 @@ export function MobileMenu({
             >
               <div className="flex items-center justify-between border-b border-ink-line p-4">
                 <span className="text-xl font-extrabold tracking-tight text-brand">
-                  ANIME<span className="text-white">FLIX</span>
+Anime<span className="text-white"> Köşesi</span>
                 </span>
                 <button
                   onClick={() => setOpen(false)}

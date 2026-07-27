@@ -42,7 +42,7 @@ localhost gösterir** — arama motorları siteyi indeksleyemez, sosyal
 medya önizlemeleri çalışmaz.
 
 ```
-NEXT_PUBLIC_SITE_URL=https://alanadiniz.com
+NEXT_PUBLIC_SITE_URL=https://animekosesi.com
 ```
 
 Kod artık üretim derlemesinde localhost kalırsa konsola uyarı basıyor,
@@ -52,8 +52,8 @@ ama derlemeyi durdurmuyor — uyarıyı gözden kaçırmayın.
 
 **Authentication → URL Configuration**
 
-- **Site URL**: `https://alanadiniz.com`
-- **Redirect URLs**: `https://alanadiniz.com/**`
+- **Site URL**: `https://animekosesi.com`
+- **Redirect URLs**: `https://animekosesi.com/**`
 
 Bunlar `localhost:3000`'de kalırsa giriş sonrası yönlendirmeler
 kullanıcıyı localhost'a atar.
