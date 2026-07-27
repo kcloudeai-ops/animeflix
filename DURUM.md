@@ -9,6 +9,8 @@
 - **Yığın**: Next.js 15 (App Router) + TypeScript + Supabase (Postgres+Auth) +
   Tailwind v4 + Framer Motion + TanStack Query
 - **Konum**: `C:\Users\nuref\Desktop\cloudev1`
+- **Git deposu**: https://github.com/kcloudeai-ops/animeflix (private, `main` dalı).
+  Değişiklikten sonra: `git add -A && git commit -m "..." && git push`
 - **Çalıştırma**: `npm run dev` → http://localhost:3000
 - **Veri kaynağı**: **AniList GraphQL** (Jikan/MAL sık 504 verdiği için terk edildi).
   Bölüm başlık boşlukları **Kitsu**'dan dolduruldu.
