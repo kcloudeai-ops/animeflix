@@ -1,0 +1,24 @@
+# Bağımlılıklar ve build çıktıları
+node_modules/
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Ortam (SIRLAR — asla commit etme)
+.env
+.env.local
+.env*.local
+
+# Script ilerleme dosyaları (yerel, geçici)
+.seed-progress.json
+.seed-anilist-progress.json
+.fill-titles-progress.json
+.fill-trailers-progress.json
+.series-relations.json
+.missing-neighbors.json
+
+# Sistem
+.DS_Store
+Thumbs.db

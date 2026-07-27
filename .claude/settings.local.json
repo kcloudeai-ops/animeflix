@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"home %{http_code} in %{time_total}s\\\\n\" http://localhost:3000/)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -o /dev/null -w \"admin %{http_code}\\\\n\" http://localhost:3000/admin)",
+      "Bash(curl -s -X POST http://localhost:3000/api/admin/import -H \"Content-Type: application/json\" -d '{\"malId\":52991}' -w \"\\\\nHTTP %{http_code}\\\\n\")",
+      "Bash(curl -s -X POST http://localhost:3000/api/admin/import -H \"Content-Type: application/json\" -d '{\"malId\":\"abc\"}' -w \"\\\\nHTTP %{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:3000/robots.txt)",
+      "Bash(curl -s http://localhost:3000/sitemap.xml)",
+      "Bash(npx --yes kill-port 3001)",
+      "Bash(powershell -NoProfile -Command 'Get-NetTCPConnection -LocalPort 3001 -State Listen -EA SilentlyContinue | Select-Object -Expand OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force }')",
+      "Bash(curl -s -o /dev/null -w \"site: %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"kategori: %{http_code}\\\\n\" http://localhost:3000/kategori/action)",
+      "Bash(timeout 560 node scripts/seed-anilist.mjs --count 1700)"
+    ]
+  }
+}
