@@ -23,6 +23,8 @@ export interface Anime {
   title_english: string | null;
   title_japanese: string | null;
   synopsis: string | null;
+  /** synopsis'in Türkçe makine çevirisi; render `synopsis_tr ?? synopsis` gösterir. */
+  synopsis_tr?: string | null;
   poster_url: string | null;
   banner_url: string | null;
   trailer_url: string | null;
@@ -60,6 +62,8 @@ export interface Episode {
   number: number;
   title: string | null;
   synopsis: string | null;
+  /** synopsis'in Türkçe makine çevirisi (bölümlerde şimdilik veri yok). */
+  synopsis_tr?: string | null;
   thumbnail_url: string | null;
   duration_sec: number | null;
   source: VideoSource;

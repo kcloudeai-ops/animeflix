@@ -190,7 +190,7 @@ export default async function AnimeDetailPage({
             ) : null}
 
             <p className="mt-5 max-w-3xl leading-relaxed text-zinc-300">
-              {anime.synopsis ?? "Özet bulunmuyor."}
+              {anime.synopsis_tr ?? anime.synopsis ?? "Özet bulunmuyor."}
             </p>
 
             {anime.studios.length > 0 ? (

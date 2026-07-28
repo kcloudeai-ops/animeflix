@@ -96,9 +96,9 @@ export default async function EpisodePage({ params }: Props) {
           {anime.title} — {ep.number}. Bölüm
         </h1>
         {ep.title ? <p className="mt-1 text-zinc-400">{ep.title}</p> : null}
-        {ep.synopsis ? (
+        {ep.synopsis_tr ?? ep.synopsis ? (
           <p className="mt-3 max-w-3xl leading-relaxed text-zinc-300">
-            {ep.synopsis}
+            {ep.synopsis_tr ?? ep.synopsis}
           </p>
         ) : null}
       </header>

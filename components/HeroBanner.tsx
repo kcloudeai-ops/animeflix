@@ -61,7 +61,7 @@ export function HeroBanner({ slaytlar }: { slaytlar: HeroSlayt[] }) {
   if (slaytlar.length === 0) return null;
 
   const { anime, gercekBanner } = slaytlar[i];
-  const ozet = (anime.synopsis ?? "").slice(0, 220);
+  const ozet = (anime.synopsis_tr ?? anime.synopsis ?? "").slice(0, 220);
 
   return (
     <section
@@ -211,7 +211,7 @@ export function HeroBanner({ slaytlar }: { slaytlar: HeroSlayt[] }) {
             className="mt-4 line-clamp-2 text-sm text-zinc-300 md:line-clamp-3 md:text-base"
           >
             {ozet}
-            {(anime.synopsis?.length ?? 0) > 220 ? "…" : ""}
+            {((anime.synopsis_tr ?? anime.synopsis)?.length ?? 0) > 220 ? "…" : ""}
           </motion.p>
 
           <motion.div variants={ogeVar} className="mt-6 flex gap-3">
