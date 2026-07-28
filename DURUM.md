@@ -37,7 +37,9 @@
 
 ## Kurulu özellikler
 
-- Anasayfa: 3 sn'de geçen hero carousel, "Son Eklenen Bölümler" (sekmeli),
+- Anasayfa: 3 sn'de geçen hero carousel (mobilde DİKEY afiş, masaüstü/TV'de
+  geniş banner + Ken Burns — yatay banner telefonu aşırı kırptığı için ayrı;
+  birleştirmeyin), "Son Eklenen Bölümler" (sekmeli),
   "İzlemeye Devam Et", tür carousel'leri
 - `/kesfet` (filtre+sayfalama), `/ara` (arama), `/kategori/[slug]`,
   `/takvim` (yayın takvimi), `/koleksiyon` (otomatik SEO listeleri)

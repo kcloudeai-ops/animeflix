@@ -71,7 +71,7 @@ export function HeroBanner({ slaytlar }: { slaytlar: HeroSlayt[] }) {
       // `max-h` çok geniş ekranlarda hero'nun ekranı yutmasını engeller.
       // min-h metin bloğunun sığmasına göre belirlendi: badge + başlık +
       // künye + özet + düğmeler ≈ 320px, üstte 64px sabit navbar var.
-      className="relative aspect-[16/7] max-h-[78vh] min-h-[520px] w-full overflow-hidden"
+      className="relative aspect-[16/7] max-h-[88vh] min-h-[460px] w-full overflow-hidden md:min-h-[520px]"
       onMouseEnter={() => setDurdu(true)}
       onMouseLeave={() => setDurdu(false)}
       onFocusCapture={() => setDurdu(true)}
@@ -88,48 +88,65 @@ export function HeroBanner({ slaytlar }: { slaytlar: HeroSlayt[] }) {
           transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
           className="absolute inset-0"
         >
-          {gercekBanner ? (
-            /* Geniş banner + Ken Burns: görsel yavaşça zoom yapıp kayar,
-               sinematik "canlı" his verir (durağan afiş yerine). */
-            <motion.div
-              className="absolute inset-0"
-              initial={{ scale: 1.12, x: 12 }}
-              animate={durdu ? {} : { scale: 1, x: 0 }}
-              transition={{ duration: 8, ease: "linear" }}
-            >
-              <Image
-                src={anime.banner_url!}
-                alt=""
-                fill
-                sizes="100vw"
-                priority={i === 0}
-                className="object-cover object-center"
-              />
-            </motion.div>
-          ) : (
-            /* Banner yok: afiş dikey olduğu için yayılamaz.
-               Arkaya bulanık kopyası, öne doğru oranıyla kendisi. */
-            <>
-              <Image
-                src={anime.poster_url ?? ""}
-                alt=""
-                fill
-                sizes="100vw"
-                priority={i === 0}
-                className="scale-110 object-cover object-center blur-2xl saturate-150"
-              />
-              <div className="absolute inset-0 bg-ink/40" />
-              <div className="absolute inset-y-0 right-[6%] hidden aspect-[2/3] h-[78%] my-auto overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10 md:block">
+          {/* MOBİL: dikey afiş ekranı doldurur. Yatay banner telefonda
+              aşırı kırpılıyordu (≈0.72:1 kutuya 2.6:1 görsel → %70 kesik).
+              Afiş 2:3 olduğu için telefona neredeyse birebir oturur;
+              object-top yüzleri üstte tutar. */}
+          <div className="absolute inset-0 md:hidden">
+            <Image
+              src={anime.poster_url ?? anime.banner_url ?? ""}
+              alt=""
+              fill
+              sizes="100vw"
+              priority={i === 0}
+              className="object-cover object-top"
+            />
+          </div>
+
+          {/* MASAÜSTÜ / TV: sinematik geniş banner + Ken Burns */}
+          <div className="absolute inset-0 hidden md:block">
+            {gercekBanner ? (
+              /* Görsel yavaşça zoom yapıp kayar — sinematik "canlı" his. */
+              <motion.div
+                className="absolute inset-0"
+                initial={{ scale: 1.12, x: 12 }}
+                animate={durdu ? {} : { scale: 1, x: 0 }}
+                transition={{ duration: 8, ease: "linear" }}
+              >
+                <Image
+                  src={anime.banner_url!}
+                  alt=""
+                  fill
+                  sizes="100vw"
+                  priority={i === 0}
+                  className="object-cover object-center"
+                />
+              </motion.div>
+            ) : (
+              /* Banner yok: afiş dikey olduğu için yayılamaz.
+                 Arkaya bulanık kopyası, öne doğru oranıyla kendisi. */
+              <>
                 <Image
                   src={anime.poster_url ?? ""}
-                  alt={`${anime.title} afişi`}
+                  alt=""
                   fill
-                  sizes="320px"
-                  className="object-cover"
+                  sizes="100vw"
+                  priority={i === 0}
+                  className="scale-110 object-cover object-center blur-2xl saturate-150"
                 />
-              </div>
-            </>
-          )}
+                <div className="absolute inset-0 bg-ink/40" />
+                <div className="absolute inset-y-0 right-[6%] my-auto hidden aspect-[2/3] h-[78%] overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10 md:block">
+                  <Image
+                    src={anime.poster_url ?? ""}
+                    alt={`${anime.title} afişi`}
+                    fill
+                    sizes="320px"
+                    className="object-cover"
+                  />
+                </div>
+              </>
+            )}
+          </div>
         </motion.div>
       </AnimatePresence>
 
@@ -145,7 +162,7 @@ export function HeroBanner({ slaytlar }: { slaytlar: HeroSlayt[] }) {
           initial="gizli"
           animate="acik"
           exit="cikis"
-          className="absolute bottom-16 left-0 max-w-2xl px-4 md:bottom-20 md:px-10"
+          className="absolute bottom-16 left-0 max-w-2xl px-4 md:bottom-20 md:px-10 xl:max-w-3xl 2xl:bottom-28 2xl:px-16"
         >
           <motion.span
             variants={ogeVar}
@@ -155,7 +172,7 @@ export function HeroBanner({ slaytlar }: { slaytlar: HeroSlayt[] }) {
           </motion.span>
 
           {/* Başlık kelime kelime, maske altından yukarı kayarak açılır */}
-          <h1 className="line-clamp-2 text-3xl font-extrabold leading-tight tracking-tight drop-shadow-lg md:text-5xl">
+          <h1 className="line-clamp-2 text-3xl font-extrabold leading-tight tracking-tight drop-shadow-lg md:text-5xl xl:text-6xl 2xl:text-7xl">
             {anime.title.split(" ").map((kelime, ki) => (
               <span
                 key={ki}
