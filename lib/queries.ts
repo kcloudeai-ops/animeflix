@@ -58,7 +58,7 @@ function dedupe(list: Anime[]): Anime[] {
 }
 
 const ANIME_COLUMNS =
-  "id,mal_id,slug,title,title_english,title_japanese,synopsis,poster_url,banner_url,trailer_url,type,status,season,year,total_episodes,duration_min,score,rating,studios,is_published,is_featured,view_count,meta_title,meta_description,og_image_url,synced_at,created_at,updated_at,series_id,season_number,season_label";
+  "id,mal_id,slug,title,title_english,title_japanese,synopsis,synopsis_tr,poster_url,banner_url,trailer_url,type,status,season,year,total_episodes,duration_min,score,rating,studios,is_published,is_featured,view_count,meta_title,meta_description,og_image_url,synced_at,created_at,updated_at,series_id,season_number,season_label";
 
 export interface Row {
   title: string;

@@ -20,6 +20,7 @@ import { WatchlistButton } from "@/components/WatchlistButton";
 import { TrailerButton } from "@/components/TrailerButton";
 import { youtubeId } from "@/lib/youtube";
 import { animeMetaAciklama } from "@/lib/seo";
+import { trGenre } from "@/lib/genre-names";
 import { Pagination } from "@/components/Pagination";
 import { CharacterList } from "@/components/CharacterList";
 import { SeasonTabs } from "@/components/SeasonTabs";
@@ -183,7 +184,7 @@ export default async function AnimeDetailPage({
                     key={g.id}
                     className="rounded-full bg-white/10 px-3 py-1 text-xs text-zinc-200"
                   >
-                    {g.name}
+                    {trGenre(g.name)}
                   </li>
                 ))}
               </ul>
