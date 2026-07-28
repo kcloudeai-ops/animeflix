@@ -52,6 +52,10 @@
   10 sn'de tazelenen KPI + "şu an bakılan sayfalar"
 - SEO: TVSeries/TVSeason/Person/VideoObject/ItemList/Breadcrumb JSON-LD,
   sitemap (~2.700 URL), robots, OG image, manifest, favicon
+- **Meta açıklamaları Türkçe**: synopsis İngilizce geldiği için meta/OG/JSON-LD
+  açıklamaları `lib/seo.ts`'te yapısal alanlardan (tür+yıl+bölüm) Türkçe
+  üretilir; tür adları `trGenre` ile çevrilir. Admin `meta_description`
+  girerse o kullanılır. (Görünür synopsis metni hâlâ İngilizce — ayrı iş.)
 
 ## Scriptler (npm run …)
 
@@ -64,6 +68,7 @@
 | `import:ids` | Eksik sezon komşularını aktarır |
 | `fetch:schedule -- --all` | Yayın saatleri + karakterler |
 | `migrate:slugs` | Slug'ları -izle- formatına taşır |
+| `node scripts/fix-meta-tr.mjs [--apply]` | İngilizce auto meta_description'ları null'lar (çalıştırıldı) |
 
 Tümü `.env.local`'deki `SUPABASE_SERVICE_ROLE_KEY` ile çalışır, Next.js'ten bağımsız.
 

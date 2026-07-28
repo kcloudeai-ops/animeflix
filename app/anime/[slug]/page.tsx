@@ -19,6 +19,7 @@ import {
 import { WatchlistButton } from "@/components/WatchlistButton";
 import { TrailerButton } from "@/components/TrailerButton";
 import { youtubeId } from "@/lib/youtube";
+import { animeMetaAciklama } from "@/lib/seo";
 import { Pagination } from "@/components/Pagination";
 import { CharacterList } from "@/components/CharacterList";
 import { SeasonTabs } from "@/components/SeasonTabs";
@@ -38,10 +39,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!anime) return { title: "Bulunamadı" };
 
   const title = anime.meta_title ?? `${anime.title} Türkçe Altyazılı İzle`;
-  const description =
-    anime.meta_description ??
-    anime.synopsis?.slice(0, 155) ??
-    `${anime.title} tüm bölümleri HD kalitede.`;
+  // İngilizce synopsis'i meta'ya koymuyoruz; Türkçe, yapısal açıklama üretiyoruz.
+  const description = anime.meta_description ?? animeMetaAciklama(anime);
   const image = anime.og_image_url ?? anime.poster_url ?? undefined;
 
   return {

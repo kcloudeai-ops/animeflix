@@ -132,7 +132,7 @@ function toAnimeRow(m) {
     rating: null,
     studios: (m.studios?.nodes ?? []).map((s) => s.name),
     meta_title: `${title} Türkçe Altyazılı İzle`,
-    meta_description: synopsis.slice(0, 155).trim() || `${title} anime serisini HD izle.`,
+    meta_description: null, // İngilizce synopsis'i meta'ya yazma; site Türkçe üretir (lib/seo.ts)
     og_image_url: poster,
     synced_at: new Date().toISOString(),
   };

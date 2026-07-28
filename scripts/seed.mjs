@@ -211,9 +211,9 @@ function toAnimeRow(a) {
     rating: a.rating ?? null,
     studios: (a.studios ?? []).map((s) => s.name),
     meta_title: `${title} Türkçe Altyazılı İzle`,
-    meta_description:
-      synopsis.slice(0, 155).trim() ||
-      `${title} anime serisinin tüm bölümlerini HD kalitede izle.`,
+    // Synopsis İNGİLİZCE; meta'ya yazma. Boş bırak — site Türkçe açıklamayı
+    // yapısal alanlardan üretir (lib/seo.ts). Admin panelinden elle girilebilir.
+    meta_description: null,
     og_image_url: poster,
     synced_at: new Date().toISOString(),
   };

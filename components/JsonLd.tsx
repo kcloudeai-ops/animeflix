@@ -1,6 +1,11 @@
 import { SITE_URL } from "@/lib/supabase/config";
 import type { AnimeCharacter, AnimeWithEpisodes, Episode } from "@/lib/types";
 import type { Sezon } from "@/lib/queries";
+import {
+  animeMetaAciklama,
+  bolumMetaAciklama,
+  fragmanMetaAciklama,
+} from "@/lib/seo";
 
 
 function Script({ data }: { data: object }) {
@@ -42,7 +47,8 @@ export function TVSeriesJsonLd({
         ),
         url: `${SITE_URL}/anime/${anime.slug}`,
         image: anime.poster_url ?? undefined,
-        description: anime.synopsis ?? undefined,
+        // İngilizce synopsis yerine Türkçe açıklama (admin girdiyse onu kullan)
+        description: anime.meta_description ?? animeMetaAciklama(anime),
         genre: anime.genres.map((g) => g.name),
         numberOfEpisodes: anime.total_episodes || undefined,
         numberOfSeasons: sezonlar.length > 1 ? sezonlar.length : undefined,
@@ -124,10 +130,7 @@ export function VideoObjectJsonLd({
         name: `${anime.title} ${defaultLabel}${
           hasRealTitle ? ` — ${episode.title}` : ""
         }`,
-        description:
-          episode.synopsis ??
-          anime.synopsis?.slice(0, 200) ??
-          `${anime.title} ${episode.number}. bölüm.`,
+        description: bolumMetaAciklama(anime.title, episode.number),
         thumbnailUrl: [episode.thumbnail_url ?? anime.poster_url].filter(Boolean),
         uploadDate: episode.air_date ?? anime.created_at,
         duration: episode.duration_sec
@@ -205,9 +208,7 @@ export function TrailerJsonLd({
         "@context": "https://schema.org",
         "@type": "VideoObject",
         name: `${anime.title} — Fragman`,
-        description:
-          anime.synopsis?.slice(0, 200) ??
-          `${anime.title} anime fragmanı.`,
+        description: fragmanMetaAciklama(anime.title),
         thumbnailUrl: [`https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`],
         uploadDate: anime.created_at,
         embedUrl: `https://www.youtube.com/embed/${youtubeId}`,

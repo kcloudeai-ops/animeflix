@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { getAnimeBySlug, getEpisodeContext } from "@/lib/queries";
 import { EpisodeWatcher } from "@/components/EpisodeWatcher";
 import { BreadcrumbJsonLd, VideoObjectJsonLd } from "@/components/JsonLd";
+import { bolumMetaAciklama } from "@/lib/seo";
 
 export const revalidate = 3600;
 
@@ -20,9 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ep = ctx.ep;
 
   const title = `${anime.title} ${ep.number}. Bölüm İzle`;
-  const description =
-    ep.synopsis ??
-    `${anime.title} ${ep.number}. bölümü Türkçe altyazılı ve HD kalitede izleyin.`;
+  // Bölüm synopsis'i İngilizce geliyor; meta'da Türkçe açıklama kullan.
+  const description = bolumMetaAciklama(anime.title, ep.number);
   const image = ep.thumbnail_url ?? anime.poster_url ?? undefined;
 
   return {

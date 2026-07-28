@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import type { Anime } from "@/lib/types";
+import { animeMetaAciklama } from "@/lib/seo";
 
 export function AdminAnimeTable({ animes }: { animes: Anime[] }) {
   const router = useRouter();
@@ -283,7 +284,7 @@ function SeoDrawer({
               {title || `${anime.title} Türkçe Altyazılı İzle`}
             </p>
             <p className="mt-0.5 line-clamp-2 text-xs text-zinc-400">
-              {desc || anime.synopsis?.slice(0, 155) || "Açıklama yok."}
+              {desc || animeMetaAciklama(anime)}
             </p>
           </div>
         </div>
