@@ -61,6 +61,8 @@ export interface Episode {
   mal_episode_id: number | null;
   number: number;
   title: string | null;
+  /** title'ın Türkçe makine çevirisi; render `title_tr ?? title` gösterir. */
+  title_tr?: string | null;
   synopsis: string | null;
   /** synopsis'in Türkçe makine çevirisi (bölümlerde şimdilik veri yok). */
   synopsis_tr?: string | null;

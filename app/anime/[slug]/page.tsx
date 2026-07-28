@@ -264,7 +264,7 @@ export default async function AnimeDetailPage({
 
                     <span className="min-w-0 flex-1">
                       <span className="block truncate font-medium text-zinc-100">
-                        {ep.title ?? `${ep.number}. Bölüm`}
+                        {ep.title_tr ?? ep.title ?? `${ep.number}. Bölüm`}
                       </span>
                       <span className="mt-0.5 flex flex-wrap gap-x-2 text-xs text-zinc-500">
                         {ep.air_date ? (

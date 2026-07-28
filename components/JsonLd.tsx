@@ -120,7 +120,8 @@ export function VideoObjectJsonLd({
   const url = `${SITE_URL}/anime/${anime.slug}/bolum/${episode.number}`;
   // Bölüm başlığı sadece "12. Bölüm" ise sonek eklemeyelim ("12. Bölüm — 12. Bölüm")
   const defaultLabel = `${episode.number}. Bölüm`;
-  const hasRealTitle = !!episode.title && episode.title.trim() !== defaultLabel;
+  const baslik = episode.title_tr ?? episode.title;
+  const hasRealTitle = !!baslik && baslik.trim() !== defaultLabel;
 
   return (
     <Script
@@ -128,7 +129,7 @@ export function VideoObjectJsonLd({
         "@context": "https://schema.org",
         "@type": "VideoObject",
         name: `${anime.title} ${defaultLabel}${
-          hasRealTitle ? ` — ${episode.title}` : ""
+          hasRealTitle ? ` — ${baslik}` : ""
         }`,
         description: bolumMetaAciklama(anime.title, episode.number),
         thumbnailUrl: [episode.thumbnail_url ?? anime.poster_url].filter(Boolean),

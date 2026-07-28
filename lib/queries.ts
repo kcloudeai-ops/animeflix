@@ -615,6 +615,7 @@ function akisSatiri(r: unknown): BolumAkis | null {
     id: string;
     number: number;
     title: string | null;
+    title_tr?: string | null;
     thumbnail_url: string | null;
     air_at?: string | null;
     air_date: string | null;
@@ -630,7 +631,7 @@ function akisSatiri(r: unknown): BolumAkis | null {
   return {
     id: row.id,
     number: row.number,
-    title: row.title,
+    title: row.title_tr ?? row.title,
     thumbnail_url: row.thumbnail_url,
     air_at: row.air_at ?? null,
     air_date: row.air_date,
