@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { AnimatePresence, motion } from "framer-motion";
 import { Loader2, Search, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { trType } from "@/lib/genre-names";
 
 interface Hit {
   id: string;
@@ -151,7 +152,7 @@ export function SearchBar() {
                             {hit.title}
                           </p>
                           <p className="text-xs text-zinc-500">
-                            {[hit.year, hit.type, hit.score?.toFixed(1)]
+                            {[hit.year, trType(hit.type), hit.score?.toFixed(1)]
                               .filter(Boolean)
                               .join(" · ")}
                           </p>

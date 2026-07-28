@@ -13,6 +13,7 @@ import {
 import { Play, Star } from "lucide-react";
 import type { PointerEvent } from "react";
 import type { Anime } from "@/lib/types";
+import { trType } from "@/lib/genre-names";
 
 export function AnimeCard({
   anime,
@@ -111,7 +112,7 @@ export function AnimeCard({
               <span className="text-xs text-zinc-300">
                 {anime.total_episodes > 0
                   ? `${anime.total_episodes} bölüm`
-                  : anime.type ?? "—"}
+                  : trType(anime.type) || "—"}
               </span>
             </div>
           </div>
@@ -138,7 +139,7 @@ export function AnimeCard({
           {anime.title}
         </h3>
         <p className="text-xs text-zinc-500">
-          {altYazi ?? [anime.year, anime.type].filter(Boolean).join(" • ")}
+          {altYazi ?? [anime.year, trType(anime.type)].filter(Boolean).join(" • ")}
         </p>
       </Link>
     </motion.div>

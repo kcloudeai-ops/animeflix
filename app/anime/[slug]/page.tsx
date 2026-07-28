@@ -20,7 +20,7 @@ import { WatchlistButton } from "@/components/WatchlistButton";
 import { TrailerButton } from "@/components/TrailerButton";
 import { youtubeId } from "@/lib/youtube";
 import { animeMetaAciklama } from "@/lib/seo";
-import { trGenre } from "@/lib/genre-names";
+import { trGenre, trType } from "@/lib/genre-names";
 import { Pagination } from "@/components/Pagination";
 import { CharacterList } from "@/components/CharacterList";
 import { SeasonTabs } from "@/components/SeasonTabs";
@@ -166,7 +166,7 @@ export default async function AnimeDetailPage({
                 </span>
               ) : null}
               {anime.year ? <span>{anime.year}</span> : null}
-              {anime.type ? <span>{anime.type}</span> : null}
+              {anime.type ? <span>{trType(anime.type)}</span> : null}
               {anime.duration_min ? <span>{anime.duration_min} dk</span> : null}
               <span className="rounded border border-zinc-700 px-2 py-0.5 text-xs">
                 {anime.status === "airing"

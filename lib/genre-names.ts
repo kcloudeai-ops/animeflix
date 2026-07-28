@@ -31,6 +31,23 @@ export function trGenre(name: string): string {
   return TR[name] ?? name;
 }
 
+/**
+ * Anime format/tür etiketlerinin Türkçesi. TV/OVA/ONA evrensel olduğu için
+ * korunur; net Türkçe karşılığı olanlar çevrilir.
+ */
+const TR_TYPE: Record<string, string> = {
+  Movie: "Film",
+  Special: "Özel",
+  Music: "Müzik",
+  "TV Special": "TV Özel",
+  "TV Short": "Kısa",
+};
+
+export function trType(t: string | null | undefined): string {
+  if (!t) return "";
+  return TR_TYPE[t] ?? t;
+}
+
 /** Ana menüde öne çıkarılacak türler (varsa bu sırayla gösterilir). */
 export const FEATURED_GENRES = [
   "Action",
